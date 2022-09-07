@@ -1,0 +1,20 @@
+.carro{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 0px 1190px;
+  
+}
+
+.bubble{
+    position: relative;
+    left: 1175px;
+    top: 10px;
+}
