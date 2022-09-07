@@ -5,7 +5,7 @@ const Carro = () => {
     return(
         <div>
             <span className="bubble">
-                <BubbleAlert value={20}/>
+                <BubbleAlert value={3}/>
             </span>
             <button className="carro">
                 Carro
