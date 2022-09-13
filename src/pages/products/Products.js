@@ -17,7 +17,13 @@ const Products = () => {
             })
     }, [])
 
-  
+    const [dataCart, setDataCart] = useState([]);
+
+    const agregarAlCarro = (product) => {
+        setDataCart([...dataCart, product])
+    }
+
+    console.log("gerCart", dataCart);
 
     return (
         <div className="prod">
@@ -27,6 +33,7 @@ const Products = () => {
                         image={prod.image}
                         title={prod.title}
                         price={prod.price}
+                        agregarAlCarro={agregarAlCarro}
                     />
                 )}
         </div>
