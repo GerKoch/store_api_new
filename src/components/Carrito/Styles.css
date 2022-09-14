@@ -1,0 +1,57 @@
+.carritos{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    padding-bottom: 5rem;
+    visibility: hidden;
+}
+
+.carrito{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    scale: 1;
+    width: 60%;
+    height: 80%;
+    border-radius: 8px;
+    overflow-x: scroll;
+    transition: all 300ms ease-in-out;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carrito h2{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.carrito.show{
+    visibility: visible;
+}
+
+.carrito.show{
+    transform: translate(-50%, -50%);
+    scale: 1.1;
+    opacity: 1;
+    visibility: visible;
+}
+
+.carrito__close span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transform: all 300ms ease-in-out;
+    margin: 3rem 0 0 2rem;
+}
+
+.carrito__close span:hover{
+    color: crimson;
+}
