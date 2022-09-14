@@ -1,12 +1,42 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import picture from "../Images/52466_0.jpg";
 import "./Styles.css";
+import BubbleAlert from "../BubbleAlert/BubbleAlert";
+
+
 
 const Carrito = () => {
+
+    const [menu, setMenu] = useState(false);
+
+    const show1 = menu ? "carritos show" : "carritos";
+    const show2 = menu ? "carrito show" : "carrito";
+
+    const toogleFalse = () => {
+        setMenu(false);
+    }
+
+    console.log(menu)
+    
+    const toogleMenu = () => {
+        setMenu(!menu);
+    }
+
     return (
-        <div className="carritos show">
-            <div className="carrito show">
-                <div className="carrito__close">
+        <div>
+             <div>
+            <span className="bubble">
+                <BubbleAlert value={3}/>
+            </span>
+            <button className="carro" onClick={toogleMenu}>
+                Carro
+            </button>
+        </div>
+
+        <div className={show1}>
+            <div className={show2}>
+                <div className="carrito__close" onClick={toogleFalse}>
                     <span>X</span>
                 </div>
                 <h2>Su carrito</h2>
@@ -31,6 +61,8 @@ const Carrito = () => {
                 </div>
             </div>
         </div>
+        </div>
+        
     )
 }
 

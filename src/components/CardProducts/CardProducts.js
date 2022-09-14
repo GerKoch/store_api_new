@@ -2,7 +2,6 @@ import "./Styles.css";
 import Button from "../Button/Button";
 
 const CardProducts = ({ id, image, title, price, agregarAlCarro, data }) => {
-
     return(
         <div className="container">
             <p>{title}</p>
