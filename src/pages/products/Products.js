@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CardProducts from "../../components/CardProducts/CardProducts";
-import Carrito from "../../components/Carrito/Carrito";
 import "./Styles.css";
+import Carrito from "../../components/Carrito/Carrito";
 
 const Products = () => {
 
@@ -11,8 +11,6 @@ const Products = () => {
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState("");
     const [showProducts, setShowProducts] = useState([]);
-
-    const fetchProducts = [];
 
     useEffect(() => {
         setLoading(true);
@@ -50,13 +48,27 @@ const Products = () => {
     const [dataCart, setDataCart] = useState([]);
 
     const agregarAlCarro = (product) => {
-        setDataCart([...dataCart, product])
-    }
-
-    console.log("gerCart", dataCart);
+        //console.log("funcion", product);
+        setDataCart([...dataCart, product]);
+      };
+    
+      //console.log("gerCart", dataCart);
+      useEffect(() => {
+        localStorage.setItem("pCart", JSON.stringify(dataCart));
+      }, [dataCart]);
+      const test = localStorage.getItem("pCart");
+      const finalItemsCart = test ? JSON.parse(test) : [];
+      console.log("megaTest", finalItemsCart);
 
     return (
         <div>
+            <div>
+              {finalItemsCart.map(fitem =>
+                <Carrito
+                fdata={fitem}
+                />  
+                )}
+            </div>
             <div className="container_input">
                 <div>
                     <input className="input"
@@ -73,9 +85,7 @@ const Products = () => {
                     showProducts.map(prod =>
                         <CardProducts
                             key={prod.id}
-                            image={prod.image}
-                            title={prod.title}
-                            price={prod.price}
+                            data={prod}
                             agregarAlCarro={agregarAlCarro}
                         />
                     )}

@@ -1,14 +1,15 @@
 import "./Styles.css";
 import Button from "../Button/Button";
 
-const CardProducts = ({ id, image, title, price, agregarAlCarro, data }) => {
+const CardProducts = ({ agregarAlCarro, data }) => {
+        
     return(
         <div className="container">
-            <p>{title}</p>
-            <img alt={id} src={image} />
+            <p>{data.title}</p>
+            <img alt={data.id} src={data.image} />
             <hr />
-            <p>{price}</p>
-            <Button onClick={() => agregarAlCarro(title + " $: " + price + " foto: " + image)}>
+            <p>{data.price}</p>
+            <Button onClick={() => agregarAlCarro(data)}>
                 Agregar al carro
             </Button>
         </div>
